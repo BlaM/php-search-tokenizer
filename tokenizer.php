@@ -17,10 +17,10 @@ function tokenize($input) {
 
 			if ($termEnds == '""') {
 				$phrase = true;
-				$term = trim($term, '" \t\n\r\0\x0B');
+				$term = trim($term, '"' . " \t\n\r\0\x0B");
 			} elseif ($termEnds == "''") {
 				$phrase = true;
-				$term = trim($term, "' \t\n\r\0\x0B");
+				$term = trim($term, "'" . " \t\n\r\0\x0B");
 			} else {
 				$phrase = false;
 			}
