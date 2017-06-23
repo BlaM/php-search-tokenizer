@@ -13,8 +13,10 @@ $queries = array(
     '-bla:blubb',
 );
 
+$t = new SearchTokenizer();
+
 foreach ($queries as $query) {
     echo htmlentities($query), '<br>';
-    echo htmlentities(json_encode(tokenize($query), JSON_PRETTY_PRINT));
+    echo htmlentities(json_encode($t->parse($query), JSON_PRETTY_PRINT));
     echo '<hr>';
 }
